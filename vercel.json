@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/Chalkpad_70_Questions",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Chalkpad_70_Questions.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
