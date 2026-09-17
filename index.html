@@ -58,7 +58,7 @@ body::after {
 .qbtn { border:1px solid var(--border); background:#0d0b13; color:var(--muted); border-radius:3px; padding:6px 0; cursor:pointer; font-size:11px; font-family:"EB Garamond",serif; }
 .qbtn.done { color:var(--good); border-color:#3a4a34; }
 .qbtn.current { background:#241a30; color:var(--accent2); border-color:var(--accent3); }
-.main { min-width:0; padding:28px clamp(18px,4vw,55px) 70px; max-width:1200px; width:100%; margin:auto; }
+.main { min-width:0; padding:28px clamp(18px,3vw,48px) 70px; max-width:1680px; width:100%; margin:0 auto; }
 .top { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:20px; }
 .kicker { color:var(--accent); text-transform:uppercase; font-size:11px; letter-spacing:.2em; font-weight:700; font-family:"Cinzel",serif; }
 h1 { margin:6px 0 6px; font-size:clamp(26px,4vw,44px); line-height:1.1; font-family:"Cinzel",serif; font-weight:600; color:var(--text); text-shadow:0 2px 20px rgba(122,90,158,.25); }
@@ -67,18 +67,34 @@ h1 { margin:6px 0 6px; font-size:clamp(26px,4vw,44px); line-height:1.1; font-fam
 button { font:inherit; }
 .action { border:1px solid var(--border); background:#161120; color:var(--text); padding:9px 13px; border-radius:4px; cursor:pointer; font-family:"EB Garamond",serif; font-size:14px; letter-spacing:.02em; transition:.15s; }
 .action:hover { background:#211930; border-color:var(--accent3); color:var(--accent2); }
-.card { border:1px solid var(--border); border-radius:6px; background:linear-gradient(180deg,rgba(19,16,25,.92),rgba(15,12,20,.92)); box-shadow:0 18px 50px var(--shadow), inset 0 1px 0 rgba(226,220,232,.03); overflow:hidden; position:relative; }
-.card::before { content:""; position:absolute; inset:0; border:1px solid rgba(184,135,60,.08); border-radius:6px; pointer-events:none; margin:5px; }
-.meta { display:flex; flex-wrap:wrap; gap:7px; padding:17px 19px 0; }
-.pill { padding:5px 10px; border-radius:3px; border:1px solid var(--border); color:var(--muted); font-size:11px; letter-spacing:.03em; background:rgba(24,19,32,.6); }
-.content { padding:19px; }
-.problem { line-height:1.7; white-space:pre-wrap; color:#dcd6e5; font-size:15px; }
-.problem strong { color:var(--accent2); }
-.section { margin-top:24px; }
+.card { border:1px solid var(--border); border-radius:8px; background:linear-gradient(180deg,rgba(19,16,25,.95),rgba(14,11,19,.95)); box-shadow:0 18px 50px var(--shadow), inset 0 1px 0 rgba(226,220,232,.03); overflow:hidden; position:relative; }
+.card::before { content:""; position:absolute; inset:0; border:1px solid rgba(184,135,60,.08); border-radius:8px; pointer-events:none; margin:5px; }
+.card-header { display:flex; justify-content:space-between; align-items:center; padding:15px 22px; border-bottom:1px solid var(--border); background:rgba(21,17,29,.45); flex-wrap:wrap; gap:10px; }
+.meta { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.pill { padding:5px 11px; border-radius:3px; border:1px solid var(--border); color:var(--muted); font-size:12px; letter-spacing:.03em; background:rgba(24,19,32,.65); }
+.pill-num { color:var(--accent2); font-weight:600; font-family:"Cinzel",serif; }
+.pill-topic { color:#d3cbe0; }
+.pill-status.done { color:var(--good); border-color:#3d5038; background:rgba(142,168,124,.12); }
+.card-shortcuts { display:flex; align-items:center; gap:12px; color:var(--muted); font-size:11.5px; letter-spacing:.03em; }
+.card-shortcuts kbd { background:#110d18; border:1px solid var(--border); border-radius:3px; padding:2px 6px; font-size:10.5px; color:var(--accent2); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+.split-body { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); min-height:550px; }
+.pane { min-width:0; padding:24px 26px; }
+.pane-question { border-right:1px solid var(--border); display:flex; flex-direction:column; gap:22px; container-type:inline-size; }
+.pane-code { background:rgba(10,8,16,.4); display:flex; flex-direction:column; }
+.code-sticky-container { position:sticky; top:20px; display:flex; flex-direction:column; gap:11px; }
+.section { margin:0; }
 .section h3 { margin:0 0 10px; font-size:12.5px; color:var(--accent2); letter-spacing:.12em; font-family:"Cinzel",serif; font-weight:600; }
 .section h3::before { content:"◆ "; color:var(--accent); font-size:9px; vertical-align:middle; }
-pre { margin:0; white-space:pre-wrap; overflow:auto; background:var(--code); border:1px solid #201a2a; border-radius:5px; padding:16px; line-height:1.55; font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace; color:#d3cbe0; }
+.problem { line-height:1.75; white-space:pre-wrap; color:#ded7e8; font-size:15.5px; }
+.problem strong { color:var(--accent2); }
+.prob-heading { display:block; margin-top:18px; margin-bottom:6px; color:var(--accent2); font-family:"Cinzel",serif; font-size:13px; letter-spacing:.08em; font-weight:600; }
+pre { margin:0; white-space:pre-wrap; overflow:auto; background:var(--code); border:1px solid #201a2a; border-radius:6px; padding:16px; line-height:1.55; font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace; color:#d3cbe0; }
 pre code { background:none; color:inherit; font:inherit; padding:0; }
+.pane-code pre { max-height:calc(88vh - 120px); font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; padding:18px 20px; tab-size:4; box-shadow:inset 0 2px 8px rgba(0,0,0,.4); }
+.code-header { display:flex; justify-content:space-between; align-items:center; }
+.code-title-group { display:flex; align-items:center; gap:9px; }
+.code-title-group h3 { margin:0; }
+.code-badge { padding:3px 8px; border-radius:3px; background:rgba(184,135,60,.15); border:1px solid rgba(184,135,60,.35); color:var(--accent2); font-size:11px; font-weight:600; letter-spacing:.05em; font-family:ui-monospace,SFMono-Regular,monospace; }
 .hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-operator { color:#b98ee0; font-weight:600; }
 .hljs-string,.hljs-regexp { color:#e0a458; }
 .hljs-comment,.hljs-quote { color:#756b8a; font-style:italic; }
@@ -89,22 +105,31 @@ pre code { background:none; color:inherit; font:inherit; padding:0; }
 .hljs-meta,.hljs-meta .hljs-keyword { color:#8a7fa6; }
 .hljs-punctuation { color:#a89bc2; }
 .codehead { display:flex; justify-content:space-between; align-items:center; margin-bottom:9px; }
-.testgrid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.testgrid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@container(max-width:480px) { .testgrid { grid-template-columns:1fr; } }
 .test { min-width:0; }
+.test pre { max-height:220px; font-size:12px; padding:12px 14px; background:#090710; }
 .note { padding:12px 14px; border-left:3px solid var(--accent); background:#120f18; color:var(--muted); border-radius:2px; font-size:12px; line-height:1.5; }
-.navrow { display:flex; justify-content:space-between; gap:8px; margin-top:14px; }
+.navrow { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:18px; flex-wrap:wrap; }
 .hidden { display:none !important; }
 .empty { padding:40px; text-align:center; color:var(--muted); font-family:"Cinzel",serif; letter-spacing:.05em; }
 ::-webkit-scrollbar { width:10px; height:10px; }
 ::-webkit-scrollbar-track { background:var(--bg); }
 ::-webkit-scrollbar-thumb { background:#241d2e; border-radius:5px; border:2px solid var(--bg); }
 ::-webkit-scrollbar-thumb:hover { background:var(--accent3); }
+@media(max-width:1024px) {
+  .split-body { grid-template-columns:1fr; }
+  .pane-question { border-right:0; border-bottom:1px solid var(--border); padding:20px; }
+  .pane-code { background:transparent; padding:20px; }
+  .code-sticky-container { position:static; }
+  .pane-code pre { max-height:none; }
+}
 @media(max-width:850px) {
   .app { grid-template-columns:1fr; }
   .sidebar { position:relative; height:auto; border-right:0; border-bottom:1px solid var(--border); }
   .qnav { grid-template-columns:repeat(10,1fr); }
-  .testgrid { grid-template-columns:1fr; }
   .top { flex-direction:column; }
+  .card-shortcuts { display:none; }
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -186,6 +211,11 @@ function renderQNav() {
   });
 }
 
+function formatDescription(text) {
+  const escaped = escapeHtml(text);
+  return escaped.replace(/(?:^|\n)(Input Format|Output Format|Code Constraints|Constraints)(?:\n|$)/g, '\n<span class="prob-heading">◆ $1</span>\n');
+}
+
 function renderViewer() {
   const q = DATA.find(x => x.id === state.current) || filtered()[0];
   const viewer = document.getElementById("viewer");
@@ -197,36 +227,62 @@ function renderViewer() {
 
   viewer.innerHTML = `
     <article class="card">
-      <div class="meta">
-        <span class="pill">Question ${q.id} / 70</span>
-        <span class="pill">${q.topic}</span>
-        <span class="pill">${isReviewed(q.id) ? "Reviewed ✓" : "Not reviewed"}</span>
-      </div>
-      <div class="content">
-        ${sqlNote}
-        <div class="section">
-          <h3>PROBLEM</h3>
-          <div class="problem">${escapeHtml(q.description)}</div>
+      <div class="card-header">
+        <div class="meta">
+          <span class="pill pill-num">Question ${q.id} / 70</span>
+          <span class="pill pill-topic">${q.topic}</span>
+          <span class="pill pill-status ${isReviewed(q.id) ? 'done' : ''}">${isReviewed(q.id) ? "Reviewed ✓" : "Not reviewed"}</span>
         </div>
+        <div class="card-shortcuts">
+          <span class="hint"><kbd>←</kbd> <kbd>→</kbd> Navigate</span>
+          <span class="hint"><kbd>M</kbd> Mark</span>
+        </div>
+      </div>
 
-        <div class="section">
-          <h3>SAMPLE TEST CASE</h3>
-          <div class="testgrid">
-            <div class="test"><div class="codehead"><span>Input</span><button class="action copy" data-copy="${encodeURIComponent(q.input)}">Copy</button></div><pre>${escapeHtml(q.input || "No sample input supplied")}</pre></div>
-            <div class="test"><div class="codehead"><span>Expected output</span><button class="action copy" data-copy="${encodeURIComponent(q.output)}">Copy</button></div><pre>${escapeHtml(q.output || "No sample output supplied")}</pre></div>
+      <div class="split-body">
+        <div class="pane pane-question">
+          ${sqlNote}
+          <div class="section">
+            <h3>PROBLEM STATEMENT</h3>
+            <div class="problem">${formatDescription(q.description)}</div>
+          </div>
+
+          <div class="section">
+            <h3>SAMPLE TEST CASE</h3>
+            <div class="testgrid">
+              <div class="test">
+                <div class="codehead"><span>Input</span><button class="action copy" data-copy="${encodeURIComponent(q.input)}">Copy</button></div>
+                <pre>${escapeHtml(q.input || "No sample input supplied")}</pre>
+              </div>
+              <div class="test">
+                <div class="codehead"><span>Expected output</span><button class="action copy" data-copy="${encodeURIComponent(q.output)}">Copy</button></div>
+                <pre>${escapeHtml(q.output || "No sample output supplied")}</pre>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="section">
-          <div class="codehead"><h3>JAVA REFERENCE SOLUTION</h3><button class="action copy" data-copy="${encodeURIComponent(q.solution)}">Copy Java</button></div>
-          <pre><code class="language-java">${escapeHtml(q.solution)}</code></pre>
+        <div class="pane pane-code">
+          <div class="code-sticky-container">
+            <div class="code-header">
+              <div class="code-title-group">
+                <span class="code-badge">JAVA 17+</span>
+                <h3>REFERENCE SOLUTION</h3>
+              </div>
+              <button class="action copy" data-copy="${encodeURIComponent(q.solution)}">Copy Java</button>
+            </div>
+            <pre><code class="language-java">${escapeHtml(q.solution)}</code></pre>
+          </div>
         </div>
       </div>
     </article>
+
     <div class="navrow">
       <button class="action" id="prev2">← Previous</button>
+      <button class="action" id="mark2">${isReviewed(q.id) ? "Mark Unreviewed" : "Mark as Reviewed ✓"}</button>
       <button class="action" id="next2">Next →</button>
     </div>`;
+
   document.querySelectorAll("pre code").forEach(el => { if (window.hljs) hljs.highlightElement(el); });
   document.querySelectorAll(".copy").forEach(btn => btn.onclick = async () => {
     await navigator.clipboard.writeText(decodeURIComponent(btn.dataset.copy));
@@ -235,6 +291,8 @@ function renderViewer() {
   });
   document.getElementById("prev2").onclick = previous;
   document.getElementById("next2").onclick = next;
+  const mark2Btn = document.getElementById("mark2");
+  if (mark2Btn) mark2Btn.onclick = () => document.getElementById("mark").click();
 }
 
 function escapeHtml(s) {
